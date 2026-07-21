@@ -4,7 +4,7 @@ on:
   push:
     - main:
 
-jobs:
+  jobs:
   setup:
     name: Setup
     runs-on:ubuntu-latest

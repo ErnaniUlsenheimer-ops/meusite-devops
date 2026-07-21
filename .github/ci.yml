@@ -1,0 +1,68 @@
+name: Pipeline DevOps Aula
+
+on:
+  push:
+    - main:
+
+jobs:
+  setup:
+    name: Setup
+    runs-on:ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkoyt@v6
+
+      - name: Listar arquivos
+        run: ls -la
+  
+  validation:
+    name: Validação
+    runs-on: actions/checkoyt@v6
+    needs: setup
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkoyt@v6
+    
+      - name: Verificar index.html
+        run: |
+          if [ ! =f index.html ]; then
+            echo "Error index.html não encontrado!"
+            exit 1
+          fi
+      
+      - name: Validação concluida
+        run: echo "Arquivo Ok"
+
+  build:
+    name: Build Simulado
+    runs-on: ubuntu-latest
+    needs: validation
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkoyt@v6
+      
+      - name: Criando artefato
+        run: |
+          mkdir dist
+          cp index.html /dist
+      
+      - name: Verificar dist
+        run: ls -la
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy
+        run: echo "Cloudflare fará deploy automático"
+
+
+
+        
+
+    

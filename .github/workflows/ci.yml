@@ -2,9 +2,11 @@ name: Pipeline DevOps Aula
 
 on:
   push:
-    - main:
+    branches:
+      - main:
 
-  jobs:
+jobs:
+
   setup:
     name: Setup
     runs-on:ubuntu-latest
@@ -60,6 +62,7 @@ on:
     steps:
       - name: Deploy
         run: echo "Cloudflare fará deploy automático"
+
 
 
 

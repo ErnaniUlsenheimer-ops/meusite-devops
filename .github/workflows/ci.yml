@@ -17,7 +17,7 @@ jobs:
 
       - name: Listar arquivos
         run: ls -la
-  
+
   validation:
     name: Validação
     runs-on: actions/checkoyt@v6
@@ -26,14 +26,14 @@ jobs:
     steps:
       - name: Checkout código
         uses: actions/checkoyt@v6
-    
+
       - name: Verificar index.html
         run: |
           if [ ! =f index.html ]; then
             echo "Error index.html não encontrado!"
             exit 1
           fi
-      
+
       - name: Validação concluida
         run: echo "Arquivo Ok"
 
@@ -45,12 +45,12 @@ jobs:
     steps:
       - name: Checkout código
         uses: actions/checkoyt@v6
-      
+
       - name: Criando artefato
         run: |
           mkdir dist
           cp index.html /dist
-      
+
       - name: Verificar dist
         run: ls -la
 
@@ -62,10 +62,3 @@ jobs:
     steps:
       - name: Deploy
         run: echo "Cloudflare fará deploy automático"
-
-
-
-
-        
-
-    

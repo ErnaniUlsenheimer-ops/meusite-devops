@@ -49,7 +49,7 @@ jobs:
       - name: Criando artefato
         run: |
           mkdir dist
-          cp index.html /dist
+          cp index.html dist/
 
       - name: Verificar dist
         run: ls -la

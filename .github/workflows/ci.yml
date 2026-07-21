@@ -13,19 +13,19 @@ jobs:
 
     steps:
       - name: Checkout código
-        uses: actions/checkoyt@v6
+        uses: actions/checkout@v6
 
       - name: Listar arquivos
         run: ls -la
 
   validation:
     name: Validação
-    runs-on: actions/checkoyt@v6
+    runs-on: actions/checkout@v6
     needs: setup
 
     steps:
       - name: Checkout código
-        uses: actions/checkoyt@v6
+        uses: actions/checkout@v6
 
       - name: Verificar index.html
         run: |
@@ -44,7 +44,7 @@ jobs:
 
     steps:
       - name: Checkout código
-        uses: actions/checkoyt@v6
+        uses: actions/checkout@v6
 
       - name: Criando artefato
         run: |

@@ -29,7 +29,7 @@ jobs:
 
       - name: Verificar index.html
         run: |
-          if [ ! =f index.html ]; then
+          if [ ! -f index.html ]; then
             echo "Error index.html não encontrado!"
             exit 1
           fi

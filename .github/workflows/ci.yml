@@ -20,7 +20,7 @@ jobs:
 
   validation:
     name: Validação
-    runs-on: actions/checkout@v6
+    runs-on: ubuntu-latest
     needs: setup
 
     steps:
